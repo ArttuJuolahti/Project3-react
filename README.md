@@ -1,16 +1,53 @@
-# React + Vite
+# 💻 Developer Knowledge Base – React frontend for Snippet API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*Disclaimer: ChatGPT was used to help translate and structure this README.*
 
-Currently, two official plugins are available:
+This project is a small front built with React.  
+It acts as a *“Developer Knowledge Base”* on top of my existing *Snippet API (Project 2)*.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app lets me:
 
-## React Compiler
+- log in / register with email & password  
+- browse all stored code snippets 
+- filter snippets by language
+- add new snippets
+- copy snippet code to clipboard
+- delete snippets
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🔗 Live demo & backend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌐 **Live frontend (GitHub Pages):**  
+  `https://arttujuolahti.github.io/Project3-react/`
+- 🛠 **Backend API (Project 2 on Render):**  
+  `https://snippet-api-1xz2.onrender.com`
+
+---
+
+## 🧩 Tech stack
+
+### Frontend
+
+- **React** (functional components + hooks)
+  - `useState`, `useEffect`
+- **Vite** – development server & build tool
+- **React Router DOM**
+- Login route and main dashboard route
+- **Axios** – HTTP client for API requests
+- **Bootstrap** – layout and styling
+- **react-syntax-highlighter (Prism)** – code block syntax highlighting
+  - Theme: `oneDark`
+- **Custom hook `useApi`**
+  - shared logic for GET / POST / DELETE to the backend
+
+
+## Learning reflections and future ideas 
+
+In this project I learned how to connect a modern React frontend to an existing REST API and make them feel like one coherent application. 
+Building the custom useApi hook helped me understand how to reuse data-loading logic, manage loading and error states, and keep the UI in sync with the backend. 
+I also got more comfortable working with environment variables and separating concerns: the frontend only knows the public API URL, while all sensitive details stay safely on the backend.
+
+One clear improvement for the future would be to make snippets user-specific instead of global. Right now, every logged-in user can see the same shared snippet list.
+A better design would attach a userId to each snippet and filter them per logged-in user, or allow “private vs shared” snippets. 
+That would turn this into a more personal knowledge base where each developer can safely store their own code library while still optionally sharing selected snippets with others.
